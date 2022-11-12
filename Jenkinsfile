@@ -19,7 +19,7 @@ pipeline {
         {
             steps{
                 script{
-                    sh "sudo npm install --force"
+                    
                     sh " ansible-playbook ansible/build.yml -i ansible/inventory/host.yml -e ansible_become_password=root "
                 }
             }
