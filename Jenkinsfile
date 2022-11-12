@@ -16,6 +16,8 @@ pipeline {
       stage('Build 1 ') {
             steps {
                 script{
+                 sh " npm uninstall --save-dev angular/cli"
+                 sh "npm install --save-dev @angular/cli@latest"
                   sh "npm install"
                     sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml -e ansible_become_password=root "
                 }}}
